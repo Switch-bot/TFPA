@@ -8,14 +8,15 @@ Submissions of the students' work will also be done through this repository.
 
 If this is the first time you are using ROOT you can look at Template_0.ipynb, which reads zjet.root.
 
-zjet.ROOT is a very simple root file where all the variables that we need to access have a corresponding branch, and where all entries
-In the case of the variable being of the type vector, check what its dimensions are.
+zjet.ROOT is a very simple root file where all the variables that we need to access have a corresponding branch.
 
-
-
+The goal with this file is to get used to the basic functionalities of ROOT: How to read a file, how to check what is inside, and in the case of the dimensions not being explicit, what can we do with it.
 
 
 ## ROOT Fitting real data from CMS
+
+The next step is to utilize slightly more complex files, with data that is saved in a realistic format.
+
 
 
 
