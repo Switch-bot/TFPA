@@ -25,7 +25,18 @@ Lastly, if we want to plot Px vs Py we can use the TH2F class, and fill the hist
 
 The next step is to utilize slightly more complex files, with data that is saved in a realistic format.
 
+In order to do this you can follow Template_RooFit.ipynb, which reads the file Skim4.root. The first blocks of code mimick the previous template, where we can see the main TTree of the file, and its branches. This time around there are only 4 branches, with the 3 most relevant being muonP_p4, muonN_p4 and dimuon_p4.
 
+Unlike for zjet.root, these branches are more complex TLorentzVectors, and as such we cannot use the trivial TTree::Draw("TBranch") function to plot the variables. In this case we need to create a TH1F histogram and fill it one event at a time in order to plot the kinematic properties.
 
+Use the functions corresponding to the [TLorentzVector object](https://root.cern.ch/doc/master/classTLorentzVector.html) in order to plot said properties, like the mass and momenta, and vary the range and scale of the axes in order to get a better sense of the information contained file. 
+
+Compare the mass plots for all 3 branches. By eye, what is the mass value for the muonP and muonN branches, and their respective errors?
+
+Create a new histogram containing the masses of a new TLorentzVector that is the sum of muonP and muonN, and compare it to the mass spectrum for dimuon_p4.
 
 If you wish to utilize C++ there is a dimuon class created by LIP personel with code analogous to the one presented in Template_ROOFit.ipynb, that can be found at "https://github.com/aboletti/LIP-analysis-tutorial".
+
+### Applying fits to the data using RooFit
+
+There are several ways of applying a fit to data using ROOT's capacities. One of these is by taking advantage of [RooFit](https://root.cern/manual/roofit/).
