@@ -2,7 +2,7 @@ Repository for the "Topics in Particle Physics and Astroparticles II" course fro
 
 This will contain all of the content provided by the teachers for the classes, such as templates and small tutorials.
 
-In order to download the contents on this github you can copy it using git clone.
+In order to download the contents on this github you can copy it using git clone, but notice that there is no need to download the ROOT folder.
 ```
 git clone https://github.com/Switch-bot/TFPA
 ```
