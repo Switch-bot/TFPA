@@ -128,4 +128,18 @@ Although difficult to visualize, this can be interpreted as a fit to a histogram
 
 The likelihood function is usualy written in the form of -log[P(X,Θ)], and we utilize iterative minimizing/maximizing methods (Minuit2 in ROOT) in order to obtain the parameters Θ that provide the minimum/maximum Sum over all X in our data of the likelyhood function.
 
+In order to implement this with RooFit, instead of utilizing RooDataHist, we will utilize RooDataSet. The rest of the process remains very similar.
+
+By following the template, you can see that initializing the RooDataSet object is slightly more complicated. In our case, we will do so by creating a new TTree 
+object with just one branch, called "dimuon\_mass", and utilizing the initiation method that involves said TTree.
+
+Creating the TTree object is very starightforward. However, creating the branch is more complex, since we need to comply with C++ rules. In this case, we are creating the TBranch object by utilizing TTree.Branch("name",adress of the array,leaflist).
+
+The name is the easiest part as we can define it however we please to. In our case we called it dimuon\_mass. The address of the array is also straightforward, as per Python rules when we create the array we are defining by default "massarray" as the starting address of the array (akin to a pointer in C++).
+
+The hardest part is to define the leaflist. Here we need to know the dimension of our array, and the type of objects it contains. We can get the dimension by using len(massarray). In our case, since we are using the default instance of numpy.array, all entries of our dimuon mass were saved as a Double.
+
+If you follow the examples shown in the [https://root.cern.ch/doc/master/classTTree.html][TTree class page], you can see that the leaflist argument should look like "dimuon\_mass["+str(len(massarray))+"]/D". This leads to the creation instance that you can see in the template of newTree.Branch("dimuon\_mass",massarray,"dimuon\_mass["+str(len(massarray))+"]").
+
+With all of this set in place, and performing the usual shennanigans to create our model, we are then able to create the RooDataSet object.
 
