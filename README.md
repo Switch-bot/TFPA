@@ -139,7 +139,7 @@ The name is the easiest part as we can define it however we please to. In our ca
 
 The hardest part is to define the leaflist. Here we need to know the dimension of our array, and the type of objects it contains. We can get the dimension by using len(massarray). In our case, since we are using the default instance of numpy.array, all entries of our dimuon mass were saved as a Double.
 
-If you follow the examples shown in the [https://root.cern.ch/doc/master/classTTree.html][TTree class page], you can see that the leaflist argument should look like "dimuon\_mass["+str(len(massarray))+"]/D". This leads to the creation instance that you can see in the template of newTree.Branch("dimuon\_mass",massarray,"dimuon\_mass["+str(len(massarray))+"]").
+If you follow the examples shown in the [https://root.cern.ch/doc/master/classTTree.html](TTree class page), you can see that the leaflist argument should look like "dimuon\_mass["+str(len(massarray))+"]/D". This leads to the creation instance that you can see in the template of newTree.Branch("dimuon\_mass",massarray,"dimuon\_mass["+str(len(massarray))+"]").
 
 With all of this set in place, and performing the usual shennanigans to create our model, we are then able to create the RooDataSet object.
 
