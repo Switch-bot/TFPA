@@ -121,3 +121,7 @@ In order to perform a fit to the model we can simply run model.fitTo(RooDataHist
 The remainder of the code shows how to plot the different RooFit models, the RooDataHist that we created, and a nice legend to accompany it.
 
 ### Performing an Unbinned Fit
+
+Performing an Unbinned Fit is not inherently more dificult than the regular histogram fit, but it does provide better results since we are not "compressing" data by binning all the data points, hence leaving more precision.
+
+Although difficult to visualize, this can be interpreted as a fit to a histogram where the bins are arbitrarily small so that each bin has no more than one entry. In reality, this is more akin to an optimization problem, where there is a fitness function that depends on two different parameter groups, the parameter space of our data points "X={x\_0,x\_1,...,x\_n}" and the free parameters of our model that we will try to fit "Θ={θ_0, θ_1, ..., θ_n }" 
