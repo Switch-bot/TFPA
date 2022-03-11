@@ -19,9 +19,19 @@ After creating a name for your repository you can create it without any further 
 
 From here, several options appear on how to initiate your repository. Following "or create a new repository on the command line" should yield you with a repository containing a simple file, corresponding to a specific main folder from which you can upload your progress.
 
+The only thing that you need to do before proceeding to create your local version of the repository is to make sure that you have an ssh key so that you can upload it to the online repository (it acts as a security measure).
+
+In order to set one go to the account settings by clicking on the icon on the top right of the page, and then select the "SSH and GPG keys" option on the left bar. Try to do this on a different tab so that you can go back to the initial repository page more easily.
+
+If you already have an SSH key in your computer you can simply click on "New SSH key" and copy it to the appropriate space. Be careful to only copy the public key and not the private one.
+
+If you have never created an SSH key or do not remember the password to your pivate key follow the instructions from "generating SSH keys".
+
+Once you resolve the SSH key issues go back to the repository page
+
 As you can see from the example code, if you want to upload files to your repository save them inside the main folder, and run the command
 ```
-git add file.txt
+git add path_to_file.txt
 ```
 
 After adding a file to your repository, then you have to commit your changes through
@@ -33,6 +43,27 @@ However, this only changes you local version of the repository. In order to uplo
 ```
 git push -u origin main
 ```
+
+If by some reason you want to remove the file from git, then instead of running the add command, run rm, followed by the usual commit and push.
+```
+git rm path_to_file.txt
+```
+
+If you want to move a file to a new folder within your main git folder you need to both add the folder after the file has been moved, so that git adds the folder and all that is within it, and remove the file from its original folder in git, such as the following example:
+```
+cd git_folder
+mkdir new_folder
+mv file.txt new_folder/
+git add new_folder
+git rm file.txt
+git commit -m "moved file.txt from the main git_folder to a new new_folder"
+git push -u origin main
+```
+If you just add the folder without removing the file in its old location, once you push your local version to the online repository you will realize that the file will be duplicated. It will appear on its older location as well as on the newly created folder.
+
+If you just wish to upload your google colabs notebook to your github there is a built in command. In order to do so, while on the google colab notebook, select the "Save a copy in GitHub" option from the "File" bar on the upper left, and simply choose the GitHub repository you wish to upload it to.
+
+If you check your GitHub repository afterwards, the notebook should automatically be there. 
 
 ## ROOT Basics
 
