@@ -20,19 +20,19 @@ After creating a name for your repository you can create it without any further 
 From here, several options appear on how to initiate your repository. Following "or create a new repository on the command line" should yield you with a repository containing a simple file, corresponding to a specific main folder from which you can upload your progress.
 
 As you can see from the example code, if you want to upload files to your repository save them inside the main folder, and run the command
-'''
+```
 git add file.txt
-'''
+```
 
 After adding a file to your repository, then you have to commit your changes through
-'''
+```
 git commit -m "small message that describes the changes in the repository that you commited to"
-'''
+```
 
 However, this only changes you local version of the repository. In order to upload the changes of your local repository to your online one that everyone can access to you need to push the local version by running
-'''
+```
 git push -u origin main
-'''
+```
 
 ## ROOT Basics
 
