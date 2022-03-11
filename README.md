@@ -7,6 +7,33 @@ In order to download the contents on this github you can copy it using git clone
 git clone https://github.com/Switch-bot/TFPA
 ```
 
+### Creating a git repository
+
+In order to create a git repository so that you can submit your notebooks you can utilize github.
+
+If you do not already have an account, create one following the usual procedures. For GitHub sign up using your e-mail. If it is an institutional e-mail you might get the option to register as a student and apply for student priviledges. Although you should not need it for this course, you are free to do so.
+
+The first thing you will do once your account is set up is to create a repository where you can upload your notebooks to. In order to do this select the option "Create repository" on the top left of the first screen that shows up after creating your account.
+
+After creating a name for your repository you can create it without any further work, but feel free to look at the options available. Just remember that if you set your repository private you will need to grant access to it so that we can retrieve your projects.
+
+From here, several options appear on how to initiate your repository. Following "or create a new repository on the command line" should yield you with a repository containing a simple file, corresponding to a specific main folder from which you can upload your progress.
+
+As you can see from the example code, if you want to upload files to your repository save them inside the main folder, and run the command
+'''
+git add file.txt
+'''
+
+After adding a file to your repository, then you have to commit your changes through
+'''
+git commit -m "small message that describes the changes in the repository that you commited to"
+'''
+
+However, this only changes you local version of the repository. In order to upload the changes of your local repository to your online one that everyone can access to you need to push the local version by running
+'''
+git push -u origin main
+'''
+
 ## ROOT Basics
 
 If this is the first time you are using ROOT you can look at Template_0.ipynb, which reads zjet.root.
