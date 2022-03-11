@@ -133,9 +133,9 @@ In order to implement this with RooFit, instead of utilizing RooDataHist, we wil
 By following the template, you can see that initializing the RooDataSet object is slightly more complicated. In our case, we will do so by creating a new TTree 
 object with just one branch, called "dimuon\_mass", and utilizing the initiation method that involves said TTree.
 
-Creating the TTree object is very starightforward. However, creating the branch is more complex, since we need to comply with C++ rules. In this case, we are creating the TBranch object by utilizing TTree.Branch("name",adress of the array,leaflist).
+Creating the TTree object is very starightforward. However, creating the branch is more complex, since we need to comply with C++ rules. In this case, we are creating the TBranch object by utilizing TTree::Branch("name", adress of the array, leaflist).
 
-The name is the easiest part as we can define it however we please to. In our case we called it dimuon\_mass. The address of the array is also straightforward, as per Python rules when we create the array we are defining by default "massarray" as the starting address of the array (akin to a pointer in C++).
+The name is the easiest part as we can define it however we please to. In our case we called it dimuon\_mass. The address of the array is also straightforward, as per Python rules when we create the array we are defining by default the variable "massarray" as the starting address of the array (akin to a pointer in C++).
 
 The hardest part is to define the leaflist. Here we need to know the dimension of our array, and the type of objects it contains. We can get the dimension by using len(massarray). In our case, since we are using the default instance of numpy.array, all entries of our dimuon mass were saved as a Double.
 
