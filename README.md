@@ -124,7 +124,7 @@ The remainder of the code shows how to plot the different RooFit models, the Roo
 
 Performing an Unbinned Fit is not inherently more dificult than the regular histogram fit, but it does provide better results since we are not "compressing" data by binning all the data points, hence leaving more precision.
 
-Although difficult to visualize, this can be interpreted as trying to fit to a histogram where the bins are arbitrarily small so that each bin has no more than one entry. In reality, this is more akin to an optimization problem, where there is a likelyhood function that depends on two different parameter groups, the parameter space of our data points "X={x\_0,x\_1,...,x\_n}" and the free parameters of our model that we will try to fit "Θ={θ\_0, θ\_1, ..., θ\_n}". 
+Although difficult to visualize, this can be interpreted as trying to fit to a histogram where the bins are arbitrarily small so that each bin has no more than one entry. In reality, this is more akin to an optimization problem, where there is a likelyhood function that depends on two different parameter groups, the parameter space of our data points "X={x\_0,x\_1,...,x\_n}" and the free parameters of our model that we will try to fit "Θ={θ\_0, θ\_1, ..., θ\_m}". 
 
 The likelihood function is usualy written in the form of -log[P(X,Θ)], and we utilize iterative minimizing/maximizing methods (Minuit2 in ROOT) in order to obtain the parameters Θ that provide the minimum/maximum Sum over all X in our data of the likelyhood function.
 
