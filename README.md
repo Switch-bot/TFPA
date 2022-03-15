@@ -132,6 +132,8 @@ In order to implement this with RooFit, instead of utilizing RooDataHist, we wil
 
 By following the template, you can see that initializing the RooDataSet object is slightly more complicated. In our case, we will do so by first defining an empty RooDataSet, that has as a real variable the "mass", and we will then fill it one entry at a time. Notice that our method allows us to perform the mass cuts a priori to only include the relevant range.
 
+While you can always just load the whole dataset into RooDataSet, values outside of the specified range for the variable are counted as being on the limit, damaging the quality of the data for the fit, unless posterior cuts are made.
+
 With all of this set in place, and performing the usual shennanigans to create our model, we are then able to create the RooDataSet object.
 
 As you can see, plotting a RooDataSet automatically yields a RooDataHist-like plot.
